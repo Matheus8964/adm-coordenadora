@@ -191,46 +191,46 @@
      */
 
     const MENU = [
+  {
+    title: "FLUXO RH",
+    items: [
       {
-        title: "FLUXO RH",
-        items: [
-          {
-            label: "FOLGAS",
-            page: "./views/folgas.html"
-          },
-          {
-            label: "TROCAS",
-            page: "./views/trocas.html"
-          },
-          {
-            label: "ATESTADOS",
-            page: "./views/atestados.html"
-          },
-          {
-            label: "CALENDÁRIO GERAL",
-            page: "./views/calendario.html"
-          }
-        ]
+        label: "FOLGAS",
+        page: "./views/folgas.html"
       },
       {
-        title: "FLUXO ADMINISTRATIVO",
-        items: [
-          {
-            label: "RTP DIÁRIO",
-            page: "./views/rtp.html"
-          }
-        ]
-      }
+        label: "TROCAS",
+        page: "./views/trocas.html"
+      },
       {
-        title: "FLUXO FINANCEIRO",
-        items: [
-          {
-            label: "RECIBOS, NOTAS, RELATÓRIOS E OUTROS",
-            page: "./views/financeiro.html"
-          },
-        ]
+        label: "ATESTADOS",
+        page: "./views/atestados.html"
+      },
+      {
+        label: "CALENDÁRIO GERAL",
+        page: "./views/calendario.html"
       }
-    ];
+    ]
+  },
+  {
+    title: "FLUXO ADMINISTRATIVO",
+    items: [
+      {
+        label: "RTP DIÁRIO",
+        page: "./views/rtp.html"
+      }
+    ]
+  },
+  {
+    title: "FLUXO FINANCEIRO",
+    items: [
+      {
+        label: "RECIBOS, NOTAS, RELATÓRIOS E OUTROS",
+        page: "./views/financeiro.html"
+      }
+    ]
+  }
+];
 
     function carregarMenu() {
       const menu = document.getElementById("menu");
