@@ -18,14 +18,14 @@ window.APP_CONFIG = {
       title: "FLUXO ADM",
       items: [
         {
-          id: "pagina-adm-01",
-          label: "Página ADM 01",
+          id: "FOLGAS",
+          label: "FOLGAS",
           url: "",
           mode: "iframe"
         },
         {
-          id: "pagina-adm-02",
-          label: "Página ADM 02",
+          id: "TROCAS_ADM",
+          label: "TROCAS_ADM",
           url: "",
           mode: "iframe"
         }
@@ -35,13 +35,13 @@ window.APP_CONFIG = {
       title: "FLUXO COORDENADORA",
       items: [
         {
-          id: "pagina-coord-01",
-          label: "Página Coordenadora 01",
+          id: "TROCAS_COORDENADORA",
+          label: "TROCAS_COORDENADORA",
           url: "",
           mode: "iframe"
         },
         {
-          id: "pagina-coord-02",
+          id: "CALENDARIO GERAL",
           label: "Página Coordenadora 02",
           url: "",
           mode: "iframe"
