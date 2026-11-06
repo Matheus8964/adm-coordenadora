@@ -49,6 +49,9 @@
     closeMobileMenu();
 
     const url = (item.url || "").trim();
+    console.log("PÁGINA:", item.label);
+console.log("URL RECEBIDA:", item.url);
+console.log("URL TRATADA:", url);
     hideAllViews();
 
     if (!url) {
