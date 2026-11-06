@@ -173,7 +173,7 @@
 
     <section class="welcome">
       <h1>Central de Acesso</h1>
-      <p>Selecione o módulo que deseja acessar.</p>
+      <p>Selecione o fluxo que deseja acessar.</p>
     </section>
 
     <div id="menu"></div>
@@ -192,29 +192,42 @@
 
     const MENU = [
       {
-        title: "FLUXO ADM",
+        title: "FLUXO RH",
         items: [
           {
             label: "FOLGAS",
             page: "./views/folgas.html"
           },
           {
-            label: "TROCAS ADM",
-            page: "./views/trocas-adm.html"
-          }
-        ]
-      },
-      {
-        title: "FLUXO COORDENADORA",
-        items: [
+            label: "TROCAS",
+            page: "./views/trocas.html"
+          },
           {
-            label: "TROCAS - COORDENAÇÃO",
-            page: "./views/trocas-coordenacao.html"
+            label: "ATESTADOS",
+            page: "./views/atestados.html"
           },
           {
             label: "CALENDÁRIO GERAL",
             page: "./views/calendario.html"
           }
+        ]
+      },
+      {
+        title: "FLUXO ADMINISTRATIVO",
+        items: [
+          {
+            label: "RTP DIÁRIO",
+            page: "./views/rtp.html"
+          }
+        ]
+      }
+      {
+        title: "FLUXO FINANCEIRO",
+        items: [
+          {
+            label: "RECIBOS, NOTAS, RELATÓRIOS E OUTROS",
+            page: "./views/financeiro.html"
+          },
         ]
       }
     ];
