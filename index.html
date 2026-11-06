@@ -1,80 +1,276 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#12345A">
-  <meta name="description" content="Portal interno de acesso aos sistemas de RH.">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Suporte RH">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>SUPORTE RH</title>
+
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./icons/icon-192.png">
-  <link rel="apple-touch-icon" href="./icons/icon-192.png">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Suporte RH</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .header {
+      height: 65px;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: #60a5fa;
+    }
+
+    .header-info {
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 22px;
+    }
+
+    .welcome {
+      margin-bottom: 28px;
+    }
+
+    .welcome h1 {
+      font-size: 25px;
+      margin: 0 0 8px;
+    }
+
+    .welcome p {
+      color: #64748b;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #64748b;
+      letter-spacing: .7px;
+      margin-bottom: 13px;
+      text-transform: uppercase;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .menu-item {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 13px;
+      padding: 20px;
+      min-height: 95px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #0f172a;
+      transition: .2s;
+      box-shadow: 0 2px 5px rgba(15,23,42,.04);
+    }
+
+    .menu-item:hover {
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(15,23,42,.08);
+    }
+
+    .menu-item strong {
+      font-size: 14px;
+    }
+
+    .arrow {
+      color: #2563eb;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #94a3b8;
+      font-size: 11px;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 0 16px;
+      }
+
+      .container {
+        padding: 25px 16px;
+      }
+
+      .welcome h1 {
+        font-size: 22px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-item {
+        min-height: 75px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="app">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-symbol">RH</div>
-        <div class="brand-text">
-          <strong>SUPORTE RH</strong>
-          <span>Portal administrativo</span>
-        </div>
-      </div>
 
-      <!-- MENU EDITÁVEL: altere os grupos e os itens em config.js -->
-      <nav id="menu" class="menu" aria-label="Menu principal"></nav>
+  <header class="header">
+    <div class="logo">SUPORTE <span>RH</span></div>
+    <div class="header-info">Sistema de Gestão Administrativa</div>
+  </header>
 
-      <div class="sidebar-footer">
-        <span class="connection-dot"></span>
-        <span>Portal interno</span>
-      </div>
-    </aside>
+  <main class="container">
 
-    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+    <section class="welcome">
+      <h1>Central de Acesso</h1>
+      <p>Selecione o módulo que deseja acessar.</p>
+    </section>
 
-    <main class="main">
-      <header class="topbar">
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu">☰</button>
-        <div class="breadcrumb">
-          <span>Suporte RH</span><span class="breadcrumb-separator">/</span>
-          <strong id="currentPageName">Visualização</strong>
-        </div>
-        <div class="topbar-label">MED SERVICE</div>
-      </header>
+    <div id="menu"></div>
 
-      <!-- VIEW EDITÁVEL: o conteúdo do módulo selecionado aparece nesta área. -->
-      <section class="view-area" id="viewArea" aria-label="Visualização do módulo">
-        <div class="view-placeholder" id="viewPlaceholder">
-          <span>Selecione uma opção no menu.</span>
-        </div>
-        <div class="view-frame-container" id="viewFrameContainer" hidden>
-          <iframe
-            id="moduleView"
-            title="Visualização do módulo"
-            loading="eager"
-            allow="clipboard-read; clipboard-write; fullscreen"
-            referrerpolicy="strict-origin-when-cross-origin">
-          </iframe>
-        </div>
-        <div class="view-link-message" id="viewLinkMessage" hidden>
-          <p>Este módulo foi configurado para abrir em uma nova guia.</p>
-          <a id="viewOpenLink" class="open-link" href="#" target="_blank" rel="noopener noreferrer">Abrir sistema</a>
-        </div>
-        <div class="view-error" id="viewError" hidden>
-          <strong>Não foi possível carregar esta página.</strong>
-          <span>Verifique o endereço configurado ou abra o sistema em uma nova guia.</span>
-          <a id="viewErrorLink" href="#" target="_blank" rel="noopener noreferrer">Abrir em nova guia</a>
-        </div>
-      </section>
-    </main>
-  </div>
+  </main>
 
-  <script src="./config.js"></script>
-  <script src="./app.js"></script>
+  <footer class="footer">
+    MED SERVICE NEFROLOGIA E DIÁLISE
+  </footer>
+
+  <script>
+    /*
+     * CONFIGURAÇÃO DOS MÓDULOS
+     * Cada botão abre seu próprio arquivo HTML.
+     */
+
+    const MENU = [
+      {
+        title: "FLUXO ADM",
+        items: [
+          {
+            label: "FOLGAS",
+            page: "./views/folgas.html"
+          },
+          {
+            label: "TROCAS ADM",
+            page: "./views/trocas-adm.html"
+          }
+        ]
+      },
+      {
+        title: "FLUXO COORDENADORA",
+        items: [
+          {
+            label: "TROCAS - COORDENAÇÃO",
+            page: "./views/trocas-coordenacao.html"
+          },
+          {
+            label: "CALENDÁRIO GERAL",
+            page: "./views/calendario.html"
+          }
+        ]
+      }
+    ];
+
+    function carregarMenu() {
+      const menu = document.getElementById("menu");
+
+      menu.innerHTML = "";
+
+      MENU.forEach(grupo => {
+        const section = document.createElement("section");
+        section.className = "section";
+
+        const titulo = document.createElement("div");
+        titulo.className = "section-title";
+        titulo.textContent = grupo.title;
+
+        const grid = document.createElement("div");
+        grid.className = "menu-grid";
+
+        grupo.items.forEach(item => {
+          const link = document.createElement("a");
+
+          link.className = "menu-item";
+          link.href = item.page;
+
+          const nome = document.createElement("strong");
+          nome.textContent = item.label;
+
+          const seta = document.createElement("span");
+          seta.className = "arrow";
+          seta.textContent = "›";
+
+          link.appendChild(nome);
+          link.appendChild(seta);
+
+          grid.appendChild(link);
+        });
+
+        section.appendChild(titulo);
+        section.appendChild(grid);
+
+        menu.appendChild(section);
+      });
+    }
+
+    carregarMenu();
+
+    // SERVICE WORKER
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+          .catch(error => console.error("Erro no Service Worker:", error));
+      });
+    }
+  </script>
+
 </body>
 </html>
