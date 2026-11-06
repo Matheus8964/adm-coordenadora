@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12345A">
+  <meta name="description" content="Portal interno de acesso aos sistemas de RH.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Suporte RH">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Suporte RH</title>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-symbol">RH</div>
+        <div class="brand-text">
+          <strong>SUPORTE RH</strong>
+          <span>Portal administrativo</span>
+        </div>
+      </div>
+
+      <!-- MENU EDITÁVEL: altere os grupos e os itens em config.js -->
+      <nav id="menu" class="menu" aria-label="Menu principal"></nav>
+
+      <div class="sidebar-footer">
+        <span class="connection-dot"></span>
+        <span>Portal interno</span>
+      </div>
+    </aside>
+
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumb">
+          <span>Suporte RH</span><span class="breadcrumb-separator">/</span>
+          <strong id="currentPageName">Visualização</strong>
+        </div>
+        <div class="topbar-label">MED SERVICE</div>
+      </header>
+
+      <!-- VIEW EDITÁVEL: o conteúdo do módulo selecionado aparece nesta área. -->
+      <section class="view-area" id="viewArea" aria-label="Visualização do módulo">
+        <div class="view-placeholder" id="viewPlaceholder">
+          <span>Selecione uma opção no menu.</span>
+        </div>
+        <div class="view-frame-container" id="viewFrameContainer" hidden>
+          <iframe
+            id="moduleView"
+            title="Visualização do módulo"
+            loading="eager"
+            allow="clipboard-read; clipboard-write; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+        <div class="view-link-message" id="viewLinkMessage" hidden>
+          <p>Este módulo foi configurado para abrir em uma nova guia.</p>
+          <a id="viewOpenLink" class="open-link" href="#" target="_blank" rel="noopener noreferrer">Abrir sistema</a>
+        </div>
+        <div class="view-error" id="viewError" hidden>
+          <strong>Não foi possível carregar esta página.</strong>
+          <span>Verifique o endereço configurado ou abra o sistema em uma nova guia.</span>
+          <a id="viewErrorLink" href="#" target="_blank" rel="noopener noreferrer">Abrir em nova guia</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
