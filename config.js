@@ -20,13 +20,13 @@ window.APP_CONFIG = {
         {
           id: "FOLGAS",
           label: "FOLGAS",
-          url: "",
+          url: "https://script.google.com/a/*/macros/s/AKfycbxBwN3nOJNeof0sTV0bXmKwLAg7_RWGt2fo1qaQT9XOUePaY2m3AO7-C5u0rqKp7hM1/exec?page=admin",
           mode: "iframe"
         },
         {
           id: "TROCAS_ADM",
           label: "TROCAS_ADM",
-          url: "",
+          url: "https://script.google.com/a/*/macros/s/AKfycbzKcHVl2B-UyQjzz8i5Xc9BRCboX2-VoBWjUyKgjX_CttRY8PnpTsH41DE_oMrUszoA/exec",
           mode: "iframe"
         }
       ]
@@ -37,13 +37,13 @@ window.APP_CONFIG = {
         {
           id: "TROCAS_COORDENADORA",
           label: "TROCAS_COORDENADORA",
-          url: "",
+          url: "https://script.google.com/a/*/macros/s/AKfycbzKcHVl2B-UyQjzz8i5Xc9BRCboX2-VoBWjUyKgjX_CttRY8PnpTsH41DE_oMrUszoA/exec?page=coordenacao",
           mode: "iframe"
         },
         {
           id: "CALENDARIO GERAL",
-          label: "Página Coordenadora 02",
-          url: "",
+          label: "CALENDARIO GERAL",
+          url: "https://script.google.com/a/*/macros/s/AKfycbyUTfLoWxhAFamCUmjQu1knQCMXqINzg6mzz111vbWxkkBssjYv6HljdMEp-Fkm94xAJw/exec",
           mode: "iframe"
         }
       ]
